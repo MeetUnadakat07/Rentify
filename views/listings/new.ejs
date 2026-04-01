@@ -3,33 +3,97 @@
   <div class="row">
     <div class="col-8 offset-2">
       <h3>Create a new Listing</h3>
-      <form action="/listings" method="post">
+      <form
+        action="/listings"
+        method="post"
+        novalidate
+        class="needs-validation"
+      >
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
-          <input type="text" name="listing[title]" class="form-control" />
+          <input
+            type="text"
+            name="listing[title]"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please enter a title for your listing.
+          </div>
         </div>
+
         <div class="mb-3">
           <label for="description" class="form-label">Description</label>
-          <textarea name="listing[description]" class="form-control"></textarea>
+          <textarea
+            name="listing[description]"
+            class="form-control"
+            required
+          ></textarea>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please provide a short description of the listing.
+          </div>
         </div>
+
         <div class="mb-3">
           <label for="image" class="form-label">Enter the image URL</label>
-          <input type="text" name="listing[image]" class="form-control" />
+          <input
+            type="text"
+            name="listing[image][url]"
+            class="form-control"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please enter a valid image URL (optional).
+          </div>
         </div>
+
         <div class="row">
           <div class="mb-3 col-md-4">
             <label for="price" class="form-label">Enter the price</label>
-            <input type="number" name="listing[price]" class="form-control" />
+            <input
+              type="number"
+              name="listing[price]"
+              class="form-control"
+              required
+              min="1"
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Please enter a valid price greater than 0.
+            </div>
           </div>
+
           <div class="mb-3 col-md-8">
             <label for="country" class="form-label">Enter the country</label>
-            <input type="text" name="listing[country]" class="form-control" />
+            <input
+              type="text"
+              name="listing[country]"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Please enter the country where the listing is located.
+            </div>
           </div>
         </div>
+
         <div class="mb-3">
           <label for="location" class="form-label">Enter the location</label>
-          <input type="text" name="listing[location]" class="form-control" />
+          <input
+            type="text"
+            name="listing[location]"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please enter the city or area of the listing.
+          </div>
         </div>
+
         <button class="btn btn-dark mb-4 add-btn">Add</button>
       </form>
     </div>
